@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace PersonDataManagement
@@ -22,6 +23,18 @@ namespace PersonDataManagement
             personList.Add(new Person("p7", "Chetan", "Pune", 65));
 
             DisplayPerson(personList);
+        }
+
+        public void ListTop2RecordsAgeLessThan60()
+        {
+            List<Person> lip = 
+                personList
+                .FindAll(person => person.age < 60)  //find
+                .OrderBy(x => x.age)        //sort
+                .Take(2)                    //select
+                .ToList();                  //save
+
+            DisplayPerson(lip);
         }
 
         void DisplayPerson(List<Person> people)

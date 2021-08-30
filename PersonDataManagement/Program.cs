@@ -9,6 +9,9 @@ namespace PersonDataManagement
             Console.WriteLine(" Welcome to person data management program.");
             PersonData data = new PersonData();
             data.NewList();
+
+            Console.WriteLine("\n 1] Retrieve top 2 records from the list for age is less than 60 : ");
+            data.ListTop2RecordsAgeLessThan60();
         }
     }
 }
