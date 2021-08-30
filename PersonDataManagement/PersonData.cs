@@ -67,6 +67,15 @@ namespace PersonDataManagement
             {   Console.WriteLine("\n Search term not matched. Value not found. \n");   }
         }
 
+        public void SkipRecords()
+        {
+            List<Person> lip = personList
+                .FindAll(person => person.age > 60)
+                .ToList();
+
+            DisplayPerson(lip);
+        }
+
         void DisplayPerson(List<Person> people)
         {
             Console.WriteLine("\n Displaying person list : ");
