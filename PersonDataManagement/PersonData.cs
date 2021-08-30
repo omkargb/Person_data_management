@@ -44,6 +44,14 @@ namespace PersonDataManagement
                 .FindAll(person => person.age > 13 && person.age < 18);
             DisplayPerson(lip);
         }
+        
+        public void CalculateAverageAge()
+        {
+            double averageAge = 
+                personList
+                .Average(person => person.age); 
+            Console.WriteLine("\n 3] Average Age is : "+averageAge.ToString("#.000"));   //3 digits after decimal
+        }
 
         void DisplayPerson(List<Person> people)
         {

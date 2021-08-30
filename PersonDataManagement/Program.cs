@@ -15,6 +15,8 @@ namespace PersonDataManagement
 
             Console.WriteLine("\n 2] Retrieve all record from the list for age between 13 to 18 : ");
             data.RecordsBetweenGivenAge();
+
+            data.CalculateAverageAge();
         }
     }
 }
