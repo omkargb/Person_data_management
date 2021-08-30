@@ -50,7 +50,7 @@ namespace PersonDataManagement
             double averageAge = 
                 personList
                 .Average(person => person.age); 
-            Console.WriteLine("\n 3] Average Age is : "+averageAge.ToString("#.000"));   //3 digits after decimal
+            Console.WriteLine("\n 4] Average Age is : "+averageAge.ToString("#.000"));   //3 digits after decimal
         }        
 
         public void SearchValue(string term)
@@ -70,10 +70,26 @@ namespace PersonDataManagement
         public void SkipRecords()
         {
             List<Person> lip = personList
-                .FindAll(person => person.age > 60)
+                .FindAll(person => person.age < 60)
+                .Skip(3)    //skip first n records and save remaining
                 .ToList();
 
             DisplayPerson(lip);
+        }
+
+        public void RemoveRecord(string term)
+        {
+            bool removed = personList
+                .Remove(personList
+                .FirstOrDefault(p => p.name.ToUpper()
+                .Equals(term.ToUpper()) ) );
+
+            if (removed == true)
+            { Console.WriteLine("\n Search term matched. Value removed. "); }
+            else
+            { Console.WriteLine("\n Search term not matched. Value not removed. "); }
+
+            DisplayPerson(personList);
         }
 
         void DisplayPerson(List<Person> people)

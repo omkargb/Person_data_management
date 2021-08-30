@@ -18,13 +18,18 @@ namespace PersonDataManagement
 
             data.CalculateAverageAge();
 
-            Console.WriteLine(" 5] Searching for value in list :");
+            Console.WriteLine("\n 5] Searching for value in list :");
             Console.Write("\n Enter a value to search : ");
             string value = Console.ReadLine();
             data.SearchValue(value);
 
-            Console.WriteLine(" 6] Skip record from the list for age is less than 60");
+            Console.WriteLine("\n 6] Skip record from the list for age is less than 60");
             data.SkipRecords();
+
+            Console.WriteLine("\n 7] Removing a value from list :");
+            Console.Write("\n Enter a value to remove : ");
+            string delValue = Console.ReadLine();
+            data.RemoveRecord(delValue);
         }
     }
 }
