@@ -51,6 +51,20 @@ namespace PersonDataManagement
                 personList
                 .Average(person => person.age); 
             Console.WriteLine("\n 3] Average Age is : "+averageAge.ToString("#.000"));   //3 digits after decimal
+        }        
+
+        public void SearchValue(string term)
+        {
+            bool value =
+                personList
+                .Contains(personList
+                .FirstOrDefault(x => x.name.ToUpper()      //return first element if found
+                .Equals(term.ToUpper()) )    ); 
+
+            if(value==true)
+            {   Console.WriteLine("\n Search term matched. Value found. \n");   }
+            else 
+            {   Console.WriteLine("\n Search term not matched. Value not found. \n");   }
         }
 
         void DisplayPerson(List<Person> people)

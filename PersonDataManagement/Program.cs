@@ -17,6 +17,11 @@ namespace PersonDataManagement
             data.RecordsBetweenGivenAge();
 
             data.CalculateAverageAge();
+
+            Console.WriteLine(" 4] Searching for value in list :");
+            Console.Write("\n Enter a value to search : ");
+            string value = Console.ReadLine();
+            data.SearchValue(value);
         }
     }
 }
