@@ -36,6 +36,14 @@ namespace PersonDataManagement
 
             DisplayPerson(lip);
         }
+        
+        public void RecordsBetweenGivenAge()
+        {
+            List<Person> lip = 
+                personList
+                .FindAll(person => person.age > 13 && person.age < 18);
+            DisplayPerson(lip);
+        }
 
         void DisplayPerson(List<Person> people)
         {

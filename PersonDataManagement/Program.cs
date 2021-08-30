@@ -12,6 +12,9 @@ namespace PersonDataManagement
 
             Console.WriteLine("\n 1] Retrieve top 2 records from the list for age is less than 60 : ");
             data.ListTop2RecordsAgeLessThan60();
+
+            Console.WriteLine("\n 2] Retrieve all record from the list for age between 13 to 18 : ");
+            data.RecordsBetweenGivenAge();
         }
     }
 }
